@@ -1,5 +1,7 @@
 import React from "react";
-import Nav from "./Nav";
+import Navbar from "../Header/Navbar";
+import CartWidget from "../Header/CartWidget";
+
 
 function Header(prop){
 console.log(prop.callback) 
@@ -9,8 +11,10 @@ console.log(prop.callback)
     <header id="main-header">
     <h1>SoVó</h1>
     <p>bienvenido {nombreCompleto}! </p>
-    <Nav/>
+    <Navbar/>
+    <CartWidget/>
 </header>
+
     )
 }
 

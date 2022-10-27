@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from './Nav'
 
 const Footer = () => {
   return (
@@ -13,7 +12,6 @@ const Footer = () => {
         <p>todos los derechos reservados</p>
     </div>
     <div>
-        <Nav/>
     </div>
     </footer>
   )
