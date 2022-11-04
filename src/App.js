@@ -1,22 +1,32 @@
-import React from "react";
-import Main from "./components/Main/Main";
-import Header from "./components/Main/ItemListContainer";
-import Footer from "./components/Footer/Footer";
+import './App.css';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Header/Navbar';
+import ItemDetailContainer from './components/Main/ItemDetailContainer';
+import ItemListContainer from './components/Main/ItemListContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cart from './components/Cart/Cart';
+import Form from './components/Form/Form';
+import Provider from './context/CartContext';
 
-function App(){
-
-    const handleClick = () => {
-        console.log("click")
-    }
+function App() {
     return (
-        <>
-        <Header 
-        nombre="horacio"
-        apellido="lopez"
-        callback={handleClick}/>
-        <Main/>
-        <Footer/>
-        </>
-    )
-  }
-  export default App 
+        <Provider>
+            <BrowserRouter>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<ItemListContainer />} />
+                    <Route
+                        path="/category/:categoryName"
+                        element={<ItemListContainer />}
+                    />
+                    <Route path="/item/:id" element={<ItemDetailContainer />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/checkout" element={<Form />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </Provider>
+    );
+}
+
+export default App;

@@ -1,8 +1,18 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { CartContext } from '../../context/CartContext';
 
 const CartWidget = () => {
-    
-}
+    const { totalUnidades } = useContext(CartContext);
 
-export default CartWidget
+    const total = totalUnidades();
+
+    return (
+        <div className="widget-container">
+            <AiOutlineShoppingCart size={20} />
+            <span>{total}</span>
+        </div>
+    );
+};
+
+export default CartWidget;

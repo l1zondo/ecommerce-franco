@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../Header/Navbar";
+import Navbar from "../Main/Main";
 import CartWidget from "../Header/CartWidget";
 
 
@@ -12,6 +12,7 @@ console.log(prop.callback)
     <h1>SoVó</h1>
     <p>bienvenido {nombreCompleto}! </p>
     <Navbar/>
+    
     <CartWidget/>
 </header>
 
